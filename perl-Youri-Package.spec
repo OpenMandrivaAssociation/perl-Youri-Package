@@ -24,7 +24,6 @@ BuildRequires:  perl(UNIVERSAL::require)
 BuildRequires:  perl-version
 Requires:       perl-version
 BuildArch:	    noarch
-BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
 YOURI stands for "Youri Offers an Upload & Repository Infrastucture". It aims
