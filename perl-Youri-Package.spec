@@ -1,7 +1,7 @@
 %define module	Youri-Package
 %define name	perl-%{module}
 %define version 0.1.1
-%define release %mkrel 4
+%define release %mkrel 5
 
 Name:		%{name}
 Version:	%{version}
