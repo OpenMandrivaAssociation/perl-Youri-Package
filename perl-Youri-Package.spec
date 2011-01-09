@@ -1,15 +1,14 @@
 %define module	Youri-Package
-%define name	perl-%{module}
-%define version 0.1.1
-%define release %mkrel 5
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		perl-%{module}
+Version:	0.1.1
+Release:	%mkrel 7
 Summary:	Abstract package class
 License:	GPL or Artistic
 Group:		Development/Other
-Source:		http://youri.zarb.or/download/%{module}-v%{version}.tar.bz2
+Source0:	http://youri.zarb.or/download/%{module}-v%{version}.tar.bz2
+#(proyvind): This needs to be cleaned up and pushed upstream...
+Patch0:		Youri-Package-v0.1.1-rpm5-port.patch
 Url:		http://youri.zarb.org
 Obsoletes:  youri
 %if %{mdkversion} < 1010
@@ -18,7 +17,7 @@ Buildrequires:	perl-devel
 BuildRequires:  perl(Youri::Package::RPM::Generator)
 BuildRequires:  perl(Test::Exception)
 BuildRequires:  perl(Expect)
-BuildRequires:  perl(RPM4)
+BuildRequires:  perl(RPM)
 BuildRequires:  perl(URPM)
 BuildRequires:  perl(UNIVERSAL::require)
 BuildRequires:  perl-version
@@ -34,6 +33,7 @@ This class provides an uniform view over various kind of packages.
 
 %prep
 %setup -q -n %{module}-v%{version}
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
