@@ -2,7 +2,7 @@
 
 Name:		perl-%{module}
 Version:	0.1.1
-Release:	%mkrel 7
+Release:	%mkrel 8
 Summary:	Abstract package class
 License:	GPL or Artistic
 Group:		Development/Other
