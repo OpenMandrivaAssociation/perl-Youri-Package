@@ -1,19 +1,14 @@
-%define module	Youri-Package
+%define upstream_name       Youri-Package
+%define upstream_version    0.2.0
 
-Name:		perl-%{module}
-Version:	0.1.1
-Release:	%mkrel 8
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 Summary:	Abstract package class
 License:	GPL or Artistic
 Group:		Development/Other
-Source0:	http://youri.zarb.or/download/%{module}-v%{version}.tar.bz2
-#(proyvind): This needs to be cleaned up and pushed upstream...
-Patch0:		Youri-Package-v0.1.1-rpm5-port.patch
 Url:		http://youri.zarb.org
-Obsoletes:  youri
-%if %{mdkversion} < 1010
-Buildrequires:	perl-devel
-%endif
+Source0:	http://youri.zarb.or/download/%{upstream_name}-%{upstream_version}.tar.gz
 BuildRequires:  perl(Youri::Package::RPM::Generator)
 BuildRequires:  perl(Test::Exception)
 BuildRequires:  perl(Expect)
@@ -32,8 +27,7 @@ to build tools making management of a coherent set of packages easier.
 This class provides an uniform view over various kind of packages.
 
 %prep
-%setup -q -n %{module}-v%{version}
-%patch0 -p1
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -51,6 +45,6 @@ rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
-%doc ChangeLog README
+%doc Changes README
 %{perl_vendorlib}/Youri
 %{_mandir}/man3/*
