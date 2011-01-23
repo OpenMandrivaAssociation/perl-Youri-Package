@@ -1,9 +1,10 @@
 %define upstream_name       Youri-Package
 %define upstream_version    0.2.0
+%define _requires_exceptions perl(\\(URPM\\|RPM.*\\|RPM4.*\\))
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 Summary:	Abstract package class
 License:	GPL or Artistic
 Group:		Development/Other
