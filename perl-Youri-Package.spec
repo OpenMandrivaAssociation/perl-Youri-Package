@@ -1,5 +1,5 @@
 %define upstream_name       Youri-Package
-%define upstream_version    0.2.1
+%define upstream_version    0.2.2
 %define _requires_exceptions perl(\\(URPM\\|RPM.*\\|RPM4.*\\))
 
 Name:       perl-%{upstream_name}
