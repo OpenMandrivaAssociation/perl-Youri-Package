@@ -4,7 +4,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 3
 Summary:	Abstract package class
 License:	GPL or Artistic
 Group:		Development/Other
@@ -13,7 +13,6 @@ Source0:	http://youri.zarb.or/download/%{upstream_name}-%{upstream_version}.tar.
 BuildRequires:  perl(Youri::Package::RPM::Generator)
 BuildRequires:  perl(Test::Exception)
 BuildRequires:  perl(Expect)
-BuildRequires:  perl(RPM)
 BuildRequires:  perl(URPM)
 BuildRequires:  perl(UNIVERSAL::require)
 BuildRequires:  perl-version
