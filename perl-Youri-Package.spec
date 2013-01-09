@@ -1,26 +1,27 @@
 %define upstream_name       Youri-Package
-%define upstream_version    0.2.2
+%define upstream_version    0.2.4
 %define __noautoreq 'perl\\((URPM|RPM.*|RPM4.*)\\)'
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    4
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	1
 Summary:	Abstract package class
 License:	GPLv1+ or Artistic
 Group:		Development/Other
-Url:		http://youri.zarb.org
-Source0:	http://youri.zarb.or/download/%{upstream_name}-%{upstream_version}.tar.gz
-BuildRequires:  perl(Youri::Package::RPM::Generator)
-BuildRequires:	perl(JSON:PP)
-BuildRequires:  perl(Test::Exception)
-BuildRequires:  perl(Expect)
-BuildRequires:  perl(RPM)
-BuildRequires:  perl(URPM)
-BuildRequires:  perl(UNIVERSAL::require)
-BuildRequires:  perl-version
-BuildRequires:  perl-devel
-Requires:       perl-version
-BuildArch:      noarch
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/G/GR/GROUSSE/%{upstream_name}-%{upstream_version}.tar.gz
+BuildRequires:	perl(Youri::Package::RPM::Generator)
+BuildRequires:	perl-JSON-PP
+BuildRequires:	perl(Test::Exception)
+BuildRequires:	perl(Expect)
+BuildRequires:	perl(RPM)
+BuildRequires:	perl(URPM)
+BuildRequires:	perl(UNIVERSAL::require)
+BuildRequires:	perl-version
+BuildRequires:	perl-devel
+BuildRequires:  gnupg
+Requires:		perl-version
+BuildArch:		noarch
 
 %description
 YOURI stands for "Youri Offers an Upload & Repository Infrastucture". It aims
