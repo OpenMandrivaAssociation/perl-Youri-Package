@@ -8,7 +8,7 @@ Release:	3
 Summary:	Abstract package class
 License:	GPLv1+ or Artistic
 Group:		Development/Other
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/G/GR/GROUSSE/%{upstream_name}-%{upstream_version}.tar.gz
 BuildRequires:	perl(Youri::Package::RPM::Generator)
 BuildRequires:	perl-JSON-PP
