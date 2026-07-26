@@ -1,15 +1,14 @@
 %define upstream_name       Youri-Package
-%define upstream_version    0.2.4
 %define __noautoreq 'perl\\((URPM|RPM.*|RPM4.*)\\)'
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	0.2.4
+Release:	4
 Summary:	Abstract package class
 License:	GPLv1+ or Artistic
 Group:		Development/Other
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/G/GR/GROUSSE/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/G/GR/GROUSSE/%{upstream_name}-%{version}.tar.gz
 BuildRequires:	make
 BuildRequires:	perl(Youri::Package::RPM::Generator)
 BuildRequires:	perl-JSON-PP
@@ -31,7 +30,7 @@ to build tools making management of a coherent set of packages easier.
 This class provides an uniform view over various kind of packages.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version} 
+%setup -q -n %{upstream_name}-%{version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
